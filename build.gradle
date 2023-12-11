@@ -1,0 +1,36 @@
+plugins {
+    id 'org.springframework.boot' version '2.7.10'
+    id 'io.spring.dependency-management' version '1.0.14.RELEASE'
+    id 'java'
+}
+
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+
+java {
+    sourceCompatibility = '17'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter'
+    developmentOnly 'org.springframework.boot:spring-boot-devtools'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+    implementation 'io.swagger:swagger-annotations:1.5.0'
+    implementation 'org.springframework.boot:spring-boot-starter-web:2.7.10'
+
+    implementation 'org.apache.jackrabbit:jackrabbit-webdav:2.21.20'
+    implementation 'org.apache.jackrabbit:jackrabbit-core:2.21.20'
+    implementation 'org.apache.jackrabbit:jackrabbit-jcr-server:2.21.20'
+
+    compileOnly 'javax.jcr:jcr:2.0'
+    compileOnly "com.oracle.ojdbc:ojdbc8:19.3.0.0"
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}
